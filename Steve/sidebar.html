@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./과제/CSS/reset.css">
+  <style>
+    .menu-ul {
+  width: 800px;
+  overflow: hidden;
+  margin: 150px auto;
+  z-index:999;
+}
+
+.menu-ul>li {
+  width: 20%;
+  /*20*5=100%*/
+  z-index:999;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  background-color: #5778ff;
+}
+
+.menu-ul a {
+  color: #fff;
+  z-index:999;
+}
+
+.submenu-ul>li {
+  line-height: 50px;
+  background-color: #94a9ff;
+  z-index:999;
+}
+
+.submenu-ul {
+  height: 0;
+  /*ul의 높이를 안보이게 처리*/
+  overflow: hidden;
+  z-index:999;
+}
+
+.menu-ul>li:hover {
+  background-color: #94a9ff;
+  z-index:999;
+  transition-duration: 0.5s;
+}
+
+.menu-ul>li:hover .submenu-ul {
+  height: 250px;
+  /*서브메뉴 li한개의 높이 50*5*/
+  transition-duration: 1s;
+  z-index:999;
+}
+
+
+
+
+    .menu>ul {
+  width: 800px;
+  overflow: hidden;
+  margin: 150px auto;
+}
+
+/*  */
+.menu>ul>li {
+  width: 20%;
+  /*20*5=100%*/
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  background-color: #5778ff;
+}
+
+.menu > ul a {
+  color: #fff;
+}
+
+.menu-sub>li {
+  line-height: 50px;
+  background-color: #94a9ff;
+}
+
+.menu-sub {
+  height: 0;
+  /*ul의 높이를 안보이게 처리*/
+  overflow: hidden;
+}
+
+.menu-sub>li:hover {
+  background-color: #94a9ff;
+  transition-duration: 0.5s;
+}
+
+.menu > ul>li:hover .menu-sub {
+  height: 250px;
+  /*서브메뉴 li한개의 높이 50*5*/
+  transition-duration: 1s;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <body>
+    <ul class="menu-ul">
+      <li><a href="#">HOME</a></li>
+      <li>
+        <a href="#">menu-ul1</a>
+        <ul class="submenu-ul">
+          <li><a href="#">submenu-ul01</a></li>
+          <li><a href="#">submenu-ul02</a></li>
+          <li><a href="#">submenu-ul03</a></li>
+          <li><a href="#">submenu-ul04</a></li>
+          <li><a href="#">submenu-ul05</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">menu-ul2</a>
+        <ul class="submenu-ul">
+          <li><a href="#">submenu-ul01</a></li>
+          <li><a href="#">submenu-ul02</a></li>
+          <li><a href="#">submenu-ul03</a></li>
+          <li><a href="#">submenu-ul04</a></li>
+          <li><a href="#">submenu-ul05</a></li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+  <div class="menu">
+    <ul>
+      <li><a href="ar.html">HOME</a></li>
+      <li>
+        <a href="#">TOP10</a>
+        <ul class="menu-sub">
+          <li><a href="#">2023</a></li>
+          <li><a href="#">2022</a></li>
+          <li><a href="#">2021</a></li>
+          <li><a href="#">2021</a></li>
+          <li><a href="#">2021</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">NEW CONTENT</a>
+        <ul class="menu-sub">
+          <li><a href="#">Cinema</a></li>
+          <li><a href="#">Netflix</a></li>
+          <li><a href="#">Watcha</a></li>
+          <li><a href="#">Watcha</a></li>
+          <li><a href="#">Deisney+</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

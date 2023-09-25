@@ -1,0 +1,477 @@
+@import "./reset.css";
+
+/* 스크롤바 삭제 */
+body{
+  -ms-overflow-style: none;
+  
+  
+  }
+  
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+#wrap{
+  border-right:1px solid #ccc;
+  border-left:1px solid #ccc;
+  height:100%;
+  width:100%;
+  max-width:720px;
+  min-width:720px;
+  margin:auto;
+  
+}
+/* header */
+#header{
+  text-align:center;
+  position:fixed;
+  top:0;
+  z-index:3;
+  max-width:720px;
+  width:100%;
+  height:80px;
+  background: #fff;
+  border-bottom:1px solid #ccc;
+  box-shadow: 0 10px 15px -10px rgba(0, 0, 0, 0.2);  
+}
+
+#header span{
+  position:absolute;
+  left:40px;
+  font-size:30px;
+  font-weight:900;
+  top:20px;
+  color:#ccc;
+}
+.menu{
+  display:inline-block;
+  position:absolute;
+  top:10px;
+  right:50px;
+  
+  
+}
+
+.menu .bar1,.bar2,.bar3{
+  
+  background: #ccc;
+  width:50px;
+  margin:10px 0;
+  height:5px;
+  border-radius:1px;
+
+}
+.menu:hover{
+  cursor:pointer;
+}
+.menu.on .bar1{
+  transform: rotate(45deg) translate(10px,11px);
+  transition: 0.1s;
+  
+}
+.menu.on .bar2{
+  visibility:hidden;
+}
+.menu.on .bar3{
+  transform: rotate(-45deg) translate(10px,-11px);
+  transition: 0.1s;
+  
+}
+.side-bar {
+  z-index:3;
+  position: fixed;
+  top: 80px;
+  right: -400px; 
+  width: 400px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  transition:right ease-in-out 0.3s;
+  
+}
+.active{
+  z-index:3;
+  position: fixed;
+  top: 80px;
+  right: -0; 
+  width: 400px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  transition:right ease-in-out 0.3s;
+}
+
+.overlay{
+  z-index:1;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0); 
+  transition:0.3s;
+}
+
+.dark-overlay {
+  z-index:2;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5); 
+  transition:0.3s;
+  
+
+
+}
+
+.slide {
+  /* layout */
+  display: flex;
+  flex-wrap: nowrap;
+  /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+  overflow: hidden;
+
+  /* position */
+  /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+  position: relative;
+
+  /* size */
+  width:100%;
+
+  /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+  user-select: none;
+}
+.slide_item {
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+  position: relative;
+  left: 0px;
+
+  /* size */
+  width: 100%;
+  height: 300px;
+  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+  flex-shrink: 0;
+
+  /* transition */
+  transition: left 0.15s;
+}
+.slide_button {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position */
+  position: absolute;
+  /* 버튼이 중앙에 위치하게 하기위해 계산 */
+  top: calc(50% - 16px);
+
+  /* size */
+  width: 32px;
+  height: 32px;
+
+  /* style */
+  border-radius: 100%;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.slide_prev_button {
+  left: 10px;
+}
+.slide_next_button {
+  right: 10px;
+}
+
+/* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+
+
+/* 페이지네이션 스타일 */
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.slide_pagination {
+  /* layout */
+  display: flex;
+  gap: 5px;
+  
+  /* position */
+  position: absolute;
+  bottom: 0;
+  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide_pagination > li {
+  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  color: #ccc;
+  cursor: pointer;
+  font-size: 25px;
+}
+.slide_pagination > li.active {
+  /* 현재 슬라이드 색상은 투명도 없이 */
+  color: orange;
+}
+
+.slide_item_duplicate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  transition: left 0.15s;
+}
+.side-bar-ca ul li{
+  background-color: #fff;
+  
+  padding: 20px 0;
+  padding-right:20px;
+  border: 1px solid #ccc;
+}
+
+.side-bar-ca ul li span{
+  margin-left:30px;
+  font-size:20px;
+  font-weight:bold;
+}
+.side-bar-ca ul li span a{
+  padding:13px 280px 13px 0px;
+  text-decoration:none;
+  color:black;
+}
+.side-bar-ca ul li {
+  cursor:pointer;
+}
+.side-bar-ca ul li p.arrow1{
+  position: absolute;
+  right: 30px;
+  top:15px;
+  width:20px;
+  height:20px;
+  border-top: 3px solid #ccc;
+  border-right: 3px solid #ccc;
+  transform: rotate(135deg);
+}
+
+.arrow1.on{
+  position: absolute;
+  right: 30px;
+  top:25px;
+  width:20px;
+  height:20px;
+  border-top: 3px solid #ccc;
+  border-right: 3px solid #ccc;
+  transform: rotate(315deg);
+}
+.side-bar-ca ul li p.arrow2 {
+  position: absolute;
+  right: 30px;
+  top:75px;
+  width:20px;
+  height:20px;
+  border-top: 3px solid #ccc;
+  border-right: 3px solid #ccc;
+  transform: rotate(135deg);
+}
+/* header end */
+
+/* main */
+#main{
+  position:relative;
+  top:80px;
+  height:500px;
+  background: white;
+  
+}
+
+#main h1{
+  position:absolute;
+  top:0;
+  left:50%;
+  line-height:2.5;
+  height:80px;
+  font-size:30px;
+  text-align:center;
+  transform:translateX(-50%);
+  width:100%;
+  background: white;
+  border-bottom:1px solid #ccc;
+}
+.main-content {
+  display:flex;
+  flex-wrap:nowrap;
+  
+}
+.main-content .text {
+  position:absolute;
+  top:100px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:3;
+  width:100%;
+  height:70%;
+  background: white;
+  /* border-top:1px solid #ccc; */
+  border-bottom:1px solid #ccc;
+}
+.main-content > div >span{
+  font-size:200%;
+  font-weight:bold;
+  position:relative;
+  top:20px;
+  left:40px;
+  
+
+}
+.main-content div ul{
+  position:absolute;
+  bottom:100px;;
+  left:20px;
+  
+}
+.main-content div img{
+  position:absolute;
+  top:0;
+  right:10px;
+  height:100%;
+}
+.main-content div ul li{
+  font-weight:bold;
+  padding:10px 0;
+}
+
+.pageline{
+  display:flex;
+  position:absolute;
+  top:460px;
+  left:50%;
+  transform:translateX(-50%);
+}
+.pageline .dot{
+  width: 10px;
+  height:10px;
+  background-color: #ccc;
+  margin:0 5px;
+  border-radius:100px;
+  
+}
+.dot.on{
+  background-color:orange;
+}
+.sect1{
+  position:relative;
+  top:75px;
+  width:100%;
+  height:1550px;
+  
+  background: #fff;
+  
+}
+.sect1 h2 {
+  
+  position:relative;
+  top:2px;
+  width:80%;
+  margin:auto;
+  padding: 20px 0;
+  text-align:center;
+  font-size:30px;
+  background-color: #fff;
+}
+.sect1 .movie,.netflix,.watcha,.disneyPlus{
+  width:100%;
+  height:300px;
+  padding-bottom:40px;
+  
+}
+.sect1 div h3 {
+  font-size:23px;
+  padding: 0 20px;
+}
+.sect1 .new-content{
+  background-color: #f0f0f0;
+  width:95%;
+  margin:auto;
+  height:80%;
+  margin-top:20px;
+  
+  
+}
+.new-content ul {
+  display:flex;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  
+}
+.new-content ul li{
+  z-index:1;
+  
+  
+  
+  padding-right:5px;
+  flex: 0 0 auto;
+  
+}
+.new-content ul li:last-child{
+  padding-left:0;
+}
+.new-content ul li img{
+  width:180px;
+  height:240px;
+  
+}
+/* main and */
+
+/* footer */
+#footer{
+  
+  position:relative;
+  bottom:0px;
+  right:1px;
+  width:100%;
+  background: #f0f0f0;
+  height:200px;
+  border: 1px solid #ccc;
+}
+#footer .logo {
+  position:absolute;
+  top:50%;
+  left:40px;
+  transform:translateY(-50%);
+}
+#footer .logo span{
+  font-size:50px;
+  font-weight:bold;
+  color:#ccc;
+}
+#footer .inner{
+  position:absolute;
+  top:50%;
+  left:30%;
+  
+  transform:translateY(-50%);
+}
+#footer .inner div{
+  color:#909090;
+}
+/* MOBILE */
+
+@media (min-width:1200px) {
+  .bar{
+    background-color: #000;
+  }
+}
+/* PC */

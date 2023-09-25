@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanilla js auto loop slide</title>
+  <link rel="stylesheet" href="./slide.css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="logo">
+        <span>Steve</span>
+      </div>
+      <div class="menu-bar">
+        <ul>
+          <li>
+            <a href="#">HOME</a>
+          </li>
+          <li>
+            <a href="#">TOP10</a>
+            <ul>
+              <li><a href="#">2023 TOP10</a></li>
+              <li><a href="#">2022 TOP10</a></li>
+              <li><a href="#">2021 TOP10</a></li>
+              <li><a href="#">2020 TOP10</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">NEW CONTENT</a>
+            <ul>
+              <li><a href="#">Cinema</a></li>
+              <li><a href="#">Netflix</a></li>
+              <li><a href="#">Watcha</a></li>
+              <li><a href="#">Deisney+</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="menu-button">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+      </div>
+    </div>
+    <div class="main-content">
+      <div class="content-header ">
+        <span>인기 영화 추천</span>
+      </div>
+      <div class="slide slide-wrap">
+        <div class="slide-item item1">
+
+          <span>1. 잠</span>
+          <ul>
+            <li>등급 : 15세 관람가</li>
+            <li>개봉일 : 2023.09.06</li>
+            <li>장르 : 미스터리</li>
+            <li>상영 시간 : 94분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/잠.webp" alt="출처:kofic">
+        </div>
+        <div class="slide-item item2">
+          <span>2. 베니스 유령 살인사건</span>
+          <ul>
+            <li>등급 : 12세 관람가</li>
+            <li>개봉일 : 2023.09.13</li>
+            <li>장르 : 미스터리,드라마,범죄,스릴러</li>
+            <li>상영 시간 : 103분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/베니스 유령 살인사건.webp" alt="출처:kofic">
+        </div>
+        <div class="slide-item item3">
+          <span>3. 오펜하이머</span>
+          <ul>
+            <li>등급 : 15세 관람가</li>
+            <li>개봉일 : 2023.08.15</li>
+            <li>장르 : 스릴러,드라마</li>
+            <li>상영 시간 : 180분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/오펜하이머.webp" alt="출처:kofic">
+        </div>
+        <div class="slide-item item4">
+          <span>4. 달짝지근해: 7510</span>
+          <ul>
+            <li>등급 : 12세 관람가</li>
+            <li>개봉일 : 2023.08.15</li>
+            <li>장르 : 코미디</li>
+            <li>상영 시간 : 119분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/달짝지근해.avif" alt="출처:kofic">
+        </div>
+        <div class="slide-item item5">
+          <span>5. 닌자터틀: 뮤턴트 대소동</span>
+          <ul>
+            <li>등급 : 전체 관람가</li>
+            <li>개봉일 : 2023.09.14</li>
+            <li>장르 : 애니메이션</li>
+            <li>상영 시간 : 99분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/닌자터틀.webp" alt="출처:kofic">
+        </div>
+        <div class="slide-item item6">
+          <span>6. 콘크리트 유토피아</span>
+          <ul>
+            <li>등급 : 15세 관람가</li>
+            <li>개봉일 : 2023.08.09</li>
+            <li>장르 : 드라마</li>
+            <li>상영 시간 : 130분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/콘크리트 유토피아.jpeg" alt="출처:kofic">
+        </div>
+        <div class="slide-item item7">
+          <span>7. 아이유 콘서트 : 더 골든 아워</span>
+          <ul>
+            <li>등급 : 전체 관람가</li>
+            <li>개봉일 : 2023.09.13</li>
+            <li>장르 : 공연실황, 다큐멘터리</li>
+            <li>상영 시간 : 171분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/아이유콘서트.jpeg" alt="출처:kofic">
+        </div>
+        <div class="slide-item item8">
+          <span>8. 여름을 향한 터널, 이별의 출구</span>
+          <ul>
+            <li>등급 : 12세 관람가</li>
+            <li>개봉일 : 2023.09.14</li>
+            <li>장르 : 애니메이션</li>
+            <li>상영 시간 : 82분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/여름을 향한 터널.jpg" alt="출처:kofic">
+        </div>
+        <div class="slide-item item9">
+          <span>9. 엘리멘탈</span>
+          <ul>
+            <li>등급 : 전체 관람가</li>
+            <li>개봉일 : 2023.06.14</li>
+            <li>장르 : 애니메이션</li>
+            <li>상영 시간 : 109분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/엘리멘탈.jpg" alt="출처:kofic">
+        </div>
+        <div class="slide-item item10">
+          <span>10. 타겟</span>
+          <ul>
+            <li>등급 : 15세 관람가</li>
+            <li>개봉일 : 2023.08.30</li>
+            <li>장르 : 스릴러</li>
+            <li>상영 시간 : 101분</li>
+          </ul>
+          <img src="/과제/image/2023 top10 img/타겟.webp" alt="출처:kofic">
+        </div>
+        <div class="slide-prev-button slide-button">◀</div>
+        <div class="slide-next-button slide-button">▶</div>
+        <ul class="slide-pagination"></ul>
+      </div>
+    </div>
+    <div class="sect-new">
+      <div class="content-header">
+        <span>영화 신작</span>
+      </div>
+      <div class="sect-new-content">
+        <div class="sub-content-wrap">
+          <div class="sub-header">
+            <span>극장</span>
+          </div>
+          <div class="new-content-position">
+            <div class="new-content-img left">
+              <ul class="imgList">
+                <li class="imgC">
+                  <img src="/과제/image/movie/가문의 영광 리턴즈.webp" alt="">
+                  <p>가문의 영광: 리턴즈</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/movie/그란 투리스모.jpeg" alt="">
+                  <p>그란 투리스모</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/movie/베니스 유령 살인사건.webp" alt="">
+                  <p>베니스 유령 살인사건</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/movie/오펜하이머.webp" alt="">
+                  <p>오펜하이머</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/movie/잠.webp" alt="">
+                  <p>잠</p>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/movie/닌자터틀.webp" alt="">
+                  <p>닌자터틀: 뮤턴트 대소동</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/movie/달짝지근해.avif" alt="">
+                  <p>달짝 지근해</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/movie/아르고 원정대.jpeg" alt="">
+                  <p>아르고 원정대</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/movie/여름을 향한 터널 copy.jpg" alt="">
+                  <p>여름을 향한 터널, 이별의 출구</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/movie/콘크리트 유토피아.jpeg" alt="">
+                  <p>콘크리트 유토피아</p>
+                  <span>d</span>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sub-content-wrap">
+          <div class="sub-header">
+            <span>넷플릭스</span>
+          </div>
+          <div class="new-content-position">
+            <div class="new-content-img right">
+              <ul class="imgList">
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/만약 우리가.jpg" alt="">
+                  <p>만약 우리가</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/스카우트의 명예.jpg" alt="">
+                  <p>스카우트의 명예</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/프라이데이나이트플랜.jpg" alt="">
+                  <p>프라이데이 나이트 플랜</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/하루반의 시간.jpg" alt="">
+                  <p>하루 반의 시간</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/행복한 결말.jpg" alt="">
+                  <p>행복한 결말</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/강철부대3.jpeg" alt="">
+                  <p>강철부대3</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/데블스 플랜.jpeg" alt="">
+                  <p>데블스 플랜</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/도적.jpeg" alt="">
+                  <p>도적</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/첫눈에 반할 통계적 확률.jpeg" alt="">
+                  <p>첫눈에 반할 통계적 확률</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Netflix/자네 잔.jpeg" alt="">
+                  <p>자네 잔: 용의자 X</p>
+                  <span>d</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sub-content-wrap">
+          <div class="sub-header">
+            <span>왓챠</span>
+          </div>
+          <div class="new-content-position">
+            <div class="new-content-img left">
+              <ul class="imgList">
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/ET.jpg" alt="">
+                  <p>E.T.</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/본 아이덴티티.jpg" alt="">
+                  <p>본 아이덴티티</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/슬픔의 삼각형.jpg" alt="">
+                  <p>슬픔의 삼각형</p>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/씽.jpg" alt="">
+                  <p>씽SIMG</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/칠드런 오브 맨.jpg" alt="">
+                  <p>칠드런 오브 맨</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/맘마미아!2.jpg" alt="">
+                  <p>맘마미아!2</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/범털.jpg" alt="">
+                  <p>범털</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/쥬라기월드.jpg" alt="">
+                  <p>쥬라기월드:--</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/해피메리엔딩.jpg" alt="">
+                  <p>해피 메리 엔딩</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Watcha/헐크.jpg" alt="">
+                  <p>헐크</p>
+                  <span>d</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sub-content-wrap">
+          <div class="sub-header">
+            <span>디즈니+</span>
+          </div>
+          <div class="new-content-position">
+            <div class="new-content-img right">
+              <ul class="imgList">
+                <li class="imgC">
+                  <img src="/과제/image/Deisney+/나는 그루트다.jpeg" alt="">
+                  <p>나는 그루트다 시즌2</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Deisney+/아라문의검.jpeg" alt="">
+                  <p>아라문의검</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Deisney+/인어공주.jpeg" alt="">
+                  <p>인어공주</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Deisney+/최악의 악.jpeg" alt="">
+                  <p>최악의 악</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/Deisney+/한강.jpg" alt="">
+                  <p>한강</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/no img/이미지 없음.jpeg" alt="">
+                  <p>이미지 없음</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/no img/이미지 없음.jpeg" alt="">
+                  <p>이미지 없음</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/no img/이미지 없음.jpeg" alt="">
+                  <p>이미지 없음</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/no img/이미지 없음.jpeg" alt="">
+                  <p>이미지 없음</p>
+                  <span>d</span>
+                </li>
+                <li class="imgC">
+                  <img src="/과제/image/no img/이미지 없음.jpeg" alt="">
+                  
+                  <p>이미지 없음</p>
+                  <span>textdadfeadsf</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="logo">
+        <span>Steve</span>
+      </div>
+      <div class="inner">
+        <div class="footer-text">이 사이트는 개인 과제용이며, 상업적으로 이용하지 않습니다.</div>
+        <div class="footer-email">메일 주소 : jeongmin.yu@pickle.plus</div>
+        <div class="img-source">이미지 출처 : kofic, 넷플릭스, 왓챠, 네이버 이미지</div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay"></div>
+  <div class="modal">
+    <button>&times;</button>
+    <div class="modalBox">
+      <img src="" alt="">
+      <span></span>
+      <p></p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Function to open the modal
+      function openModal() {
+        modal.style.display = "block";
+        var imgSrc = this.querySelector("img").getAttribute("src");
+        var imgAlt = this.querySelector("img").getAttribute("alt");
+        modalImg.setAttribute("src", imgSrc);
+        modalImg.setAttribute("alt", imgAlt);
+        var imgTxt = this.querySelector("p").textContent;
+        var imgTit = this.querySelector("span").textContent;
+        
+        modalText.textContent = imgTxt;
+        modalTitle.textContent = imgTit;
+      }
+
+      // Function to close the modal
+      function closeModal() {
+        modal.style.display = "none";
+      }
+
+      // Get modal elements
+      var modal = document.querySelector(".modal");
+      var modalImg = document.querySelector(".modalBox img");
+      var modalText = document.querySelector(".modalBox p");
+      var modalTitle = document.querySelector(".modalBox span");
+
+      // Get all elements with class "imgC"
+      var imgElements = document.querySelectorAll(".imgC");
+
+      // Add click event listener to open the modal for each image
+      imgElements.forEach(function (imgElement) {
+        imgElement.addEventListener("click", openModal);
+      });
+
+      // Add click event listener to close the modal when clicking the button
+      var closeButton = document.querySelector(".modal button");
+      closeButton.addEventListener("click", closeModal);
+
+      // Close the modal when clicking outside of it
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    });
+    let sw = 0;
+    let a = document.querySelector('.overlay');
+    document.querySelector('.menu-button').addEventListener('click', function () {
+      sw = !sw;
+      if (sw) {
+        a.style.zIndex = 0;
+      } else {
+        setTimeout(() => { a.style.zIndex = -1 }, 300);
+
+      }
+      setTimeout(() => {
+        document.querySelector('.menu-bar').classList.toggle('on');
+        document.querySelector('.overlay').classList.toggle('on');
+      }, 100)
+
+
+    })
+    document.querySelector('.overlay').addEventListener('click', function () {
+
+      setTimeout(() => { a.style.zIndex = -1; }, 300);
+      document.querySelector('.menu-bar').classList.remove('on');
+      document.querySelector('.overlay').classList.remove('on');
+    })
+
+    const slide = document.querySelector(".slide");
+    let slideWidth = slide.clientWidth;
+
+
+    const prevBtn = document.querySelector(".slide-prev-button");
+    const nextBtn = document.querySelector(".slide-next-button");
+
+
+    let slideItems = document.querySelectorAll(".slide-item");
+
+    const maxSlide = slideItems.length;
+
+
+    let currSlide = 1;
+
+
+    const pagination = document.querySelector(".slide-pagination");
+
+    for (let i = 0; i < maxSlide; i++) {
+      if (i === 0) pagination.innerHTML += `<li class="active">•</li>`;
+      else pagination.innerHTML += `<li>•</li>`;
+    }
+
+    const paginationItems = document.querySelectorAll(".slide-pagination > li");
+
+
+    const startSlide = slideItems[0];
+    const endSlide = slideItems[slideItems.length - 1];
+    const startElem = document.createElement("div");
+    const endElem = document.createElement("div");
+
+    endSlide.classList.forEach((c) => endElem.classList.add(c));
+    endElem.innerHTML = endSlide.innerHTML;
+
+    startSlide.classList.forEach((c) => startElem.classList.add(c));
+    startElem.innerHTML = startSlide.innerHTML;
+
+
+    slideItems[0].before(endElem);
+    slideItems[slideItems.length - 1].after(startElem);
+
+
+    slideItems = document.querySelectorAll(".slide-item");
+
+    let offset = slideWidth + currSlide;
+    slideItems.forEach((i) => {
+      i.setAttribute("style", `left: ${-offset}px`);
+    });
+
+    function nextMove() {
+      currSlide++;
+
+      if (currSlide <= maxSlide) {
+
+        const offset = slideWidth * currSlide;
+
+        slideItems.forEach((i) => {
+          i.setAttribute("style", `left: ${-offset}px`);
+        });
+
+        paginationItems.forEach((i) => i.classList.remove("active"));
+        paginationItems[currSlide - 1].classList.add("active");
+      } else {
+
+        currSlide = 0;
+        let offset = slideWidth * currSlide;
+        slideItems.forEach((i) => {
+          i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+        });
+        currSlide++;
+        offset = slideWidth * currSlide;
+
+        setTimeout(() => {
+
+          slideItems.forEach((i) => {
+            i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+            i.setAttribute("style", `transition: ${0.15}s; left: ${-offset}px`);
+          });
+        }, 0);
+
+        paginationItems.forEach((i) => i.classList.remove("active"));
+        paginationItems[currSlide - 1].classList.add("active");
+      }
+    }
+    function prevMove() {
+      currSlide--;
+
+      if (currSlide > 0) {
+
+        const offset = slideWidth * currSlide;
+
+        slideItems.forEach((i) => {
+          i.setAttribute("style", `left: ${-offset}px`);
+        });
+
+        paginationItems.forEach((i) => i.classList.remove("active"));
+        paginationItems[currSlide - 1].classList.add("active");
+      } else {
+
+        currSlide = maxSlide + 1;
+        let offset = slideWidth * currSlide;
+
+        slideItems.forEach((i) => {
+          i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+        });
+        currSlide--;
+        offset = slideWidth * currSlide;
+        setTimeout(() => {
+
+          slideItems.forEach((i) => {
+            i.setAttribute("style", `transition: ${0}s; left: ${-offset}px`);
+            i.setAttribute("style", `transition: ${0.15}s; left: ${-offset}px`);
+          });
+        }, 0);
+
+        paginationItems.forEach((i) => i.classList.remove("active"));
+        paginationItems[currSlide - 1].classList.add("active");
+      }
+    }
+
+
+    nextBtn.addEventListener("click", () => {
+
+      nextMove();
+    });
+
+    prevBtn.addEventListener("click", () => {
+
+      prevMove();
+    });
+
+
+    window.addEventListener("resize", () => {
+      slideWidth = slide.clientWidth;
+    });
+
+
+    for (let i = 0; i < maxSlide; i++) {
+
+      paginationItems[i].addEventListener("click", () => {
+
+        currSlide = i + 1;
+
+        const offset = slideWidth * currSlide;
+
+        slideItems.forEach((i) => {
+          i.setAttribute("style", `left: ${-offset}px`);
+        });
+
+        paginationItems.forEach((i) => i.classList.remove("active"));
+        paginationItems[currSlide - 1].classList.add("active");
+      });
+    }
+
+
+    let startPoint = 0;
+    let endPoint = 0;
+
+
+    slide.addEventListener("mousedown", (e) => {
+      startPoint = e.pageX;
+    });
+
+    slide.addEventListener("mouseup", (e) => {
+      endPoint = e.pageX;
+      if (startPoint < endPoint) {
+
+        prevMove();
+      } else if (startPoint > endPoint) {
+
+        nextMove();
+      }
+    });
+
+
+    slide.addEventListener("touchstart", (e) => {
+      startPoint = e.touches[0].pageX;
+    });
+    slide.addEventListener("touchend", (e) => {
+      endPoint = e.changedTouches[0].pageX;
+      if (startPoint < endPoint) {
+
+        prevMove();
+      } else if (startPoint > endPoint) {
+
+        nextMove();
+      }
+    });
+
+
+    let loopInterval = setInterval(() => {
+      nextMove();
+    }, 3000);
+
+
+    slide.addEventListener("mouseover", () => {
+      clearInterval(loopInterval);
+    });
+
+
+    slide.addEventListener("mouseout", () => {
+      loopInterval = setInterval(() => {
+        nextMove();
+      }, 3000);
+    });
+  </script>
+</body>
+
+</html>
